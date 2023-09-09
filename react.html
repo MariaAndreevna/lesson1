@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/@babel/standalone/babel.js"></script>
+
+<script src="https://unpkg.com/react/umd/react.development.js"></script>
+
+<script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+<script type="text/babel">
+	// Add new React component to get and print user’s name
+	class WelcomeMessage extends React.Component {
+		constructor(props){
+			super(props);
+			this.state = { name: '' };
+		}
+		handleChange = event => {
+			this.setState({ name: event.target.value });
+		};
+		// render the UI and display result when the state changes
+		render() {
+			return (
+				<React.Fragment>
+				<form>
+					<label htmlFor="name">Enter your name: </label>
+					<input
+						type="text"
+						name="name"
+						value={this.state.name}
+						onChange={this.handleChange}
+					/>
+				</form>
+				<h1>Hey {this.state.name}! You look great today!</h1>
+				</React.Fragment>
+			);
+		}
+	}
+	ReactDOM.render(
+		<WelcomeMessage />,
+		document.getElementById('root')
+	);
+</script>
+</body>
+</html>

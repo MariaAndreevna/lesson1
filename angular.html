@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+        form.ng-dirty {
+            color:orange;
+        }
+    
+        
+        form.ng-pristine {
+            color:blue;
+        }
+        </style>
+
+
+    	<form ng-app="">
+
+		<p><b>What's your name?</b> <input type="text" ng-model="user_name"></p>
+
+		<h1>Hi {{user_name}}! You look great today!</h1>
+
+	</form>
+</body>
+</html>
